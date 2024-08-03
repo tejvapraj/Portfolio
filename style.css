@@ -1,0 +1,262 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0%;
+    padding: 2px;
+    box-sizing: border-box;
+
+}
+h1{
+    
+    margin: 0; /* Reset margin to fit the animation */
+}
+nav{
+    margin-left: 50%;
+   
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 1em;
+    
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a.active {
+    color: #0077b5;
+    border-bottom: 2px solid #0077b5;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Space between text and image */
+    text-align: left; /* Left-align text to match layout */
+    position: relative; /* For absolute positioning of text */
+    padding: 2em;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: grey; /* Cursor color */
+    }
+}
+#typing-effect {
+    display: inline;
+    border-right: 0.15em solid #0077b5; /* Cursor width and color */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+    font-family: Arial, sans-serif; /* Monospace font for typewriter effect */
+}
+.text-container{
+    position: relative; /* Keeps the text in place */
+    color: white; /* Text color */
+    font-size: 2em; /* Adjust as needed */
+    line-height: 1.2; /* Adjust line height for readability */
+    max-width: 50%; /* Ensures text does not overflow the container */
+}
+.typing-done {
+    border-right: none;
+}
+
+
+/* Profile image styling */
+.profile-img {
+    width: 340px; /* Adjust the size as needed */
+    height: 350px; /* Ensure the image is a square */
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #fff; /* White border; adjust color and width as needed */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+section {
+    animation: fadeIn 1s ease-out;
+    padding: 2em;
+    color: azure;
+    margin: 1em 0;
+}
+.about {
+    background-color: #e0e0e0; /* Light Gray */
+    color: #333; /* Dark Gray */
+    border: 5px solid #333; /* Medium Gray */
+    padding: 20px;
+    position: static;
+    line-height: 1.7;
+    text-align: center;
+}
+#education {
+    background-color: #e0e0e0; /* Light Gray */
+    color: #333; /* Dark Gray */
+    border: 5px solid #333; /* Medium Gray */
+    position: static;
+    
+}
+.education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.qualification {
+    max-width: 500px;
+}
+.qualification h3{
+    font-size: 1.5em;
+    margin: 0;
+}
+.qualification p{
+    margin: 5px 0;
+}
+.title{
+    text-align: center;
+}
+.logo{
+    width: 50px; /* Adjust as needed */
+    height: auto;
+    margin-right: 20px;
+
+}
+.project{
+    background-color: #e0e0e0; /* Light Gray */
+    color: #333; /* Dark Gray */
+    border: 5px solid #333; /* Medium Gray */
+    padding: 20px;
+    text-align: center;
+}
+.resume{
+    background-color: #e0e0e0; /* Light Gray */
+    color: #333; /* Dark Gray */
+    border: 5px solid #333; /* Medium Gray */
+    padding: 20px;
+    position: static;
+    text-align: center;
+    margin: 2em 0;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    color: white;
+    background-color: #0077b5; /* Example color */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.resume-button:hover {
+    background-color: #005582; /* Darker shade on hover */
+}
+.contact{
+    text-align: center;
+
+}
+.social_icon{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    margin: 0;
+    justify-content: center; 
+
+}
+
+.social_icon a{
+   color: azure;/* Change to the desired color */
+    font-size: 24px; /* Adjust the size as needed */
+    text-decoration: none;
+    
+}
+
+.social_icon a:hover{
+    color: #0077b5; /* Change color on hover */
+}
+footer{
+    background-color: #f5f5f5; /* Light Gray */
+    color: #333; /* Dark Gray */
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .text-container {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .text-container {
+        font-size: 1.2em;
+    }
+
+    .resume-button {
+        padding: 0.5em 1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
