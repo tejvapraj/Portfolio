@@ -1,34 +1,115 @@
 html {
     scroll-behavior: smooth;
 }
+
 body{
     background-color: black;
     font-family: Arial, sans-serif;
     margin: 0%;
     padding: 2px;
     box-sizing: border-box;
-
 }
-h1{
+
+/* Ensure the header is positioned correctly */
+header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    width: 100%; /* Full width of the viewport */
+    top: 0; /* Top of the viewport */
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.menu-container {
+    width: 100%;
+    display: flex;
+    align-items: center; /* Align items vertically in the container */
+    position: relative;
+    margin-left: auto; 
+    margin-right: 20px;
+}
+
+.Portfolio_logo {
+    position: absolute; /* Take it out of the normal document flow */
+     /* Align with the top of the container */
+    left: 0; /* Align with the left of the container */
+    margin: 0; /* Reset margin to ensure proper positioning */
+    width: 7em; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
     
+}
+
+.menu-button{
+    position: fixed; /* Fixed position */
+    top: 5px; /* Distance from the top */
+    right: 5px; /* Distance from the right */
+    background: none; 
+    cursor: pointer;
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Ensure button is above other elements */
+}
+
+.bar{
+    border: 1px solid white; 
+    width: 30px;
+    height: 4px;
+    margin: 5px 0; /* Spacing between bars */
+    transition: all 0.3s ease;
+}
+
+
+h1{
     margin: 0; /* Reset margin to fit the animation */
 }
-nav{
-    margin-left: 50%;
+
+.nav-menu{
+    display: none; /* ...*/
+    position: fixed; /* ...*/
+    top : 30px;
+    right: 5em;
+    color: white;
+    width: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide overflow */
+    z-index: 999;
    
 }
 
-nav ul li{
-    display: inline;
-    margin: 0 1em;
-    
+.nav-menu.active {
+    display: flex; /* Show the menu when active */
+    flex-direction: row;
+    align-items: center;
 }
-nav ul li a{
+
+.nav-menu ul{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu ul li{
+    margin: 0 10px;
+   /* ... display: inline;
+    margin: 0 1em; */
+}
+
+.nav-menu ul li a{
     color: white;
     text-decoration: none;
+    padding : 10px;
 }
-nav ul li a.active {
-    color: #0077b5;
+
+.nav-menu ul li a.active {
+    color: white;
     border-bottom: 2px solid #0077b5;
 }
 
@@ -40,15 +121,15 @@ nav ul li a.active {
     position: relative; /* For absolute positioning of text */
     padding: 2em;
 }
+
 @keyframes typing {
     from {
-        width: 0;
-    }
+        width: 0;           
+    }                                 /* <---- This is Effect for text  */
     to {
         width: 100%;
     }
 }
-
 @keyframes blink-caret {
     from, to {
         border-color: transparent;
@@ -63,8 +144,9 @@ nav ul li a.active {
     white-space: nowrap;
     overflow: hidden;
     animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
-    font-family: Arial, sans-serif; /* Monospace font for typewriter effect */
+    font-family: Arial, sans-serif; /* Arial font for typewriter effect */
 }
+
 .text-container{
     position: relative; /* Keeps the text in place */
     color: white; /* Text color */
@@ -84,15 +166,13 @@ nav ul li a.active {
     border-radius: 50%; /* Makes the image circular */
     border: 5px solid #fff; /* White border; adjust color and width as needed */
     object-fit: cover; /* Ensures the image covers the area without distortion */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* adds a shadow effect */
     transition: transform 0.3s ease-in-out;
     
 }
-
 .profile-img:hover {
     transform: scale(1.1);
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -104,28 +184,54 @@ nav ul li a.active {
     }
 }
 
-
+/* logo for each section */
+.section-logo {
+    width: 100px; /*  To Adjust the size of the logo */
+    height: auto;
+    margin-left: 3px; 
+    display: inline-block; /* To Ensures proper alignment with text */
+    vertical-align: middle;
+}
 section {
     animation: fadeIn 1s ease-out;
     padding: 2em;
     color: azure;
     margin: 1em 0;
 }
+
+/* This are all Sections */
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title and logo horizontally */
+    font-size: 2em;
+    
+}
+h2{
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Ensure the title text and logo align horizontally */
+    align-items: center; /* Vertically center the logo and text */
+}
+.logo{
+    width: 50px; 
+    height: auto;
+    margin-right: 20px;
+}
 .about {
-    background-color: #e0e0e0; /* Light Gray */
+    background-color: #e0e0e0; 
     color: #333; /* Dark Gray */
-    border: 5px solid #333; /* Medium Gray */
+    border: 5px solid #333; 
     padding: 20px;
     position: static;
     line-height: 1.7;
     text-align: center;
 }
 #education {
-    background-color: #e0e0e0; /* Light Gray */
+    background-color: #e0e0e0;
     color: #333; /* Dark Gray */
-    border: 5px solid #333; /* Medium Gray */
-    position: static;
-    
+    border: 5px solid #333; 
+    position: static;   
 }
 .education-item {
     display: flex;
@@ -142,48 +248,118 @@ section {
 .qualification p{
     margin: 5px 0;
 }
-.title{
+.skills {
     text-align: center;
+    margin-top: 30px;
 }
-.logo{
-    width: 50px; /* Adjust as needed */
-    height: auto;
-    margin-right: 20px;
-
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.skills-category {
+    flex: 1;
+    max-width: 250px;
+}
+.skills-category h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+}
+.skills-category li {
+    margin: 5px 0;
 }
 .project{
-    background-color: #e0e0e0; /* Light Gray */
+    background-color: #e0e0e0; 
     color: #333; /* Dark Gray */
-    border: 5px solid #333; /* Medium Gray */
+    border: 5px solid #333; 
     padding: 20px;
     text-align: center;
 }
+
+#project_button{
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    color: white;
+    background-color: #0077b5; 
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#project_button:hover{
+    background-color: #005582; /* Darker shade on hover */
+}
 .resume{
-    background-color: #e0e0e0; /* Light Gray */
+    background-color: #e0e0e0; 
     color: #333; /* Dark Gray */
-    border: 5px solid #333; /* Medium Gray */
+    border: 5px solid #333;
     padding: 20px;
     position: static;
     text-align: center;
     margin: 2em 0;
 }
-
 .resume-button {
     display: inline-block;
     padding: 0.75em 1.5em;
     color: white;
-    background-color: #0077b5; /* Example color */
+    background-color: #0077b5; 
     text-decoration: none;
     border-radius: 4px;
     font-size: 16px;
 }
-
 .resume-button:hover {
     background-color: #005582; /* Darker shade on hover */
 }
 .contact{
     text-align: center;
+    padding: 2em; /* Add padding for spacing */
+    margin: 2em 0; /* Margin for spacing */  
+}
+.google-form-container{
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: auto;
+    z-index: 1;
 
+}
+.google-form-container iframe{
+    background-color: #e0e0e0; 
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-btn {
+    top :3em;
+    right: 6em;
+    position: absolute;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+     
+}
+/* Print-specific styles */
+@media print {
+    .google-form-container iframe {
+        width: 100%;
+        height: auto;
+        border: none;
+        background-color: transparent;
+        display: block;
+        margin: 0;
+    }
 }
 .social_icon{
     list-style: none;
@@ -192,29 +368,28 @@ section {
     gap: 1em;
     margin: 0;
     justify-content: center; 
-
 }
 
 .social_icon a{
-   color: azure;/* Change to the desired color */
+    color: azure;/* Change to the desired color */
     font-size: 24px; /* Adjust the size as needed */
     text-decoration: none;
-    
 }
 
 .social_icon a:hover{
     color: #0077b5; /* Change color on hover */
 }
 footer{
-    background-color: #f5f5f5; /* Light Gray */
-    color: #333; /* Dark Gray */
+    background-color: rgb(77, 77, 77); /* Light Gray */
+    color: white; 
     text-align: center;
-    padding: 1em;
+    padding: 8px;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
+/* This part is for mobile view */
 @media (max-width: 700px) {
     .profile-container {
         flex-direction: column;
@@ -224,6 +399,7 @@ footer{
     .profile-img {
         width: 250px;
         height: 250px;
+        margin-left: 10.5em;
     }
 
     .text-container {
@@ -233,6 +409,8 @@ footer{
     nav ul {
         padding: 0;
         text-align: center;
+        display: flex;
+        gap: 15px;
     }
 
     nav ul li {
@@ -242,9 +420,26 @@ footer{
 }
 
 @media (max-width: 480px) {
-    .profile-img {
-        width: 200px;
-        height: 200px;
+ 
+    .about{
+        width: 35em;
+    }
+    #education{
+        width: 33em;
+    }
+    .project{
+        width: 35em;
+    }
+    .resume{
+        width: 35em;
+    }
+    .contact{
+        width: 35em;
+    }
+    .google-form-container{
+        width: 10em;
+        margin: 0;
+        padding: 0;
     }
 
     .text-container {
