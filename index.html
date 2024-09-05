@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/png">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
 </head>
 <body>
    <header>
-    <nav>
-        
+    <div class="menu-container">
+        <img src="Logo/portfolio_logo.png" alt="Portfolio_logo" class="Portfolio_logo">
+        <div class="menu-button" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+    <nav id="nav-menu" class="nav-menu"> 
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
@@ -29,17 +40,18 @@
         </div>
     </section>
     <section class="about" id="about">
-        <h2>About Me</h2>
+        <h2 class="title"><img src="Logo/about-logo.png" alt="Education Logo" class="section-logo">About Me</h2>
         <h4>Hello, Salut, Je suis Tejal, Enchanté!<br></h4>
         <p>I'm thrilled to share my journey with you. I hold a Bachelor's Degree in Information Technology from D.G. Ruparel College of Arts, Science and Commerce 
             and subsiquently pursuing Master's Degree in Computer Application from GNIMS College of Mumbai University.
-            My My passion lies in crafting innovative and user-centric applications and websites that blend creativity with functionality. I thrive on transforming 
+            My passion lies in crafting innovative and user-centric applications and websites that blend creativity with functionality. I thrive on transforming 
             complex problems into elegant and intuitive solutions, and I am constantly seeking new challenges to enhance my skills and drive innovation in the digital space.
            I am skilled in JAVA . SQL . HTML . CSS . C . PYTHON and familiar with Android Studio IDE, capable of developing, testing, and deploying Android applications. 
         </p>
     </section>
     <section  id="education">
-        <h2 class="title">Education</h2>
+        <h2 class="title"><img src="Logo/education-logo.png" alt="Education Logo" class="section-logo">
+            Education</h2>
         <div class="education-item">
         <img src="Logo/gnims logo.png" alt="School 1 Logo" class="logo">
         <div class="qualification">
@@ -79,31 +91,59 @@
         </div>
             </div>
 
+            <div class="skills">
+                <h2 class="title"><img src="Logo/skills-logo.png" alt="Education Logo" class="section-logo">Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Programming Skills</h3>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                            <li>Java</li>
+                            <li>HTML & CSS</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Soft Skills</h3>
+                        <ul>
+                            <li>Adaptability</li>
+                            <li>Communication</li>
+                            <li>Teamwork</li>
+                            <li>Problem-solving</li>
+                            <li>Time Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
     </section>
     <section class="project" id="projects">
-        <h2>Projects</h2>
-        <p>Showcase your work here.</p>
+        <h2 class="title"><img src="Logo/project-logo.png" alt="Education Logo" class="section-logo">Projects</h2>
+        <button id = 'project_button'>Click to Explore my Projects</button>
     </section>
     <section class="resume" id="resume">
-        <h2>Resume</h2>
+        <h2 class="title"><img src="Logo/resume-logo.png" alt="Education Logo" class="section-logo">Resume</h2>
         <p>You can download my resume by clicking the link below:</p>
-        <a href="C:\Users\TEJAL VINOD APRAJ\OneDrive\Desktop\certification\TEJAL-APRAJ Resume.pdf" download="Tejal_Apraj_Resume.pdf" class="resume-button">Download Resume</a>
+        <a href="files/Tejal-v-Apraj Resume.pdf" download="Tejal_Apraj_Resume.pdf" class="resume-button">Download Resume</a>
     </section>
     <section class="contact" id="contact">  
-        <h2>Contact</h2>
+        <h2 class="title"><img src="Logo/contact-logo.png" alt="Education Logo" class="section-logo">Contact</h2>
         <p>Feel free to connect with me on </p>
         <ul class="social_icon">
-            <li><a href="https://www.linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://github.com/your-profile" target="_blank" title="Github"><i class="fab fa-github"></i></a></li>
-            <li><a href="mailto:your-email@example.com"target="_blank" title="Gmail"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/tejal-v-apraj" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/tejvapraj" target="_blank" title="Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="#" onclick="openForm()" title="Gmail"><i class="fas fa-envelope"></i></a></li>
         </ul>
-       <p>91+ ********** | tejalvapraj@gmail.com</p>
-       <h3>*****</h3>
+        <div class="google-form-container" id="formContainer">
+            <span class="close-btn" onclick="closeForm()">&times;</span>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQlonbkfQI0QEasJSDdc3QtgSMkrD7ZlzdIWzt2nD6Dd3vYQ/viewform?embedded=true" allowfullscreen title="Google Form">Loading…</iframe>
+        </div>
     </section>
     <footer>
         <p>&copy; 2024 Tejal Vinod Apraj</p>
     </footer>
-    <script src="script.js"></script>
+    
 </body>
 </html>
 
